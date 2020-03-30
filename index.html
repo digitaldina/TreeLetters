@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>The Mail Tree</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
+  </head>
+  <body style="background-color:#1b262c;">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/1.9.0/mapbox-gl.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js"></script>
+<script src="script.js"></script>
+    <h1 id="heading">The Mail Tree</h1>
+    <br>
+    <div id="mapid">
+      <script>
+        /*TODO: 
+- pull data from airtable on addresses of senders with the same chain and set that as polyline points using array
+- show message above points in polyline that is the image from airtable (along with sender name?)*/
+        var mymap = L.map('mapid').setView([0, 0], 0);
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+          attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+          id: 'mapbox/light-v10',
+          tileSize: 300,
+          minZoom: 0,
+          maxZoom: 0,
+          accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NDg1bDA1cjYzM280NHJ5NzlvNDMifQ.d6e-nNyBDtmQCVwVNivz7A#2'
+      }).addTo(mymap);
+
+      /*how to add path lines:
+      var polylinePoints = [
+        [37.781814, -122.404740],
+        [37.781719, -122.404637],
+        [37.781489, -122.404949],
+        [37.780704, -122.403945],
+        [37.780012, -122.404827]
+      ];            
+      
+      var polyline = L.polyline(polylinePoints).addTo(map); 
+      */
+      </script> 
+    </div>
+    <br>
+    <div class="formButton">
+    <a href="https://airtable.com/shrPJ6LFxerW8auxs"><button >Send a Letter!</button></a>
+    </div>
+    <div class="footer">
+      <p>Created by the amazing peeps at Hack Club</p>
+    </div>
+  </body>
+</html>
+
+
+
+
